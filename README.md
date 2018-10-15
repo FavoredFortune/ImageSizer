@@ -11,5 +11,13 @@ As a photojournalist, I want to be able to upload my large format JPG images to 
 # Instructions for use/review
 
 # Technology
+ - JavaScript
+ - Node.js (8 LTS)
+ - Homebrew
+ - Git
+ - GitHub
+ - Visual Studio Code
 
 # Resources
+- Referenced my own project, [On This Day](On-This-Day/thisday-server)
+- 
