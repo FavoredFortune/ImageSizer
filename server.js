@@ -39,7 +39,7 @@ server.listen(PORT,(error)=> {
     return console.log('an error occured', error);
   }
 
-  console.log(`server is listening on port ${PORT}`);
+  console.log(`Image Sizer server is listening on port ${PORT}`);
 });
 
 
