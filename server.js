@@ -42,6 +42,11 @@ server.listen(PORT,(error)=> {
   console.log(`Image Sizer server is listening on port ${PORT}`);
 });
 
+//using middleware(Express)
+app.get('/', (request, response) => {
+  response.send('Hello from Image Sizer using Express!');
+});
+
 
 
 

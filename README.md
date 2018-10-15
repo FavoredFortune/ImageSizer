@@ -26,6 +26,7 @@ As a photojournalist, I want to be able to upload my large format JPG images to 
     - CORS
     - Body-parser
     - Superagent
+    - Nodemon
 
 # Resources
 - Referenced my own project, [On This Day](On-This-Day/thisday-server)
