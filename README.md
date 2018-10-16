@@ -6,7 +6,7 @@
 This application allows users to upload photos and request different sizes of the photo back.
 
 # Current Status
-Tues October 16 12:36 PM PT - error view isn't routing correctly , firebase still not installed locally to test photo calls.
+Tues October 16 1:21 PM PT - error view isn't routing correctly , firebase still not installed locally to test photo calls.
 
 # User Story
 As a photojournalist, I want to be able to upload my large format JPG images to a database for others to access. I also want the others who want to use my images to be able to choose what dimensions they get the photo downloaded in.
