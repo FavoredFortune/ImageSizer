@@ -6,10 +6,10 @@ var app = app || {};
 
   resultView.initResultPage = function () {
     $('.tab-content').hide();
-    $('.result-view').show();
-    $('.result-view').empty();
-    let template = Handlebars.compile($('#result-template').text());
-    $('.result-view').append(template(this));
+    $('.results').show();
+    $('.results').empty();
+    let template = Handlebars.compile($('#results-template').text());
+    $('.results').append(template(this));
   };
 
   module.resultView = resultView;

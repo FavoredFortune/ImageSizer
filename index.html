@@ -8,7 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Image Sizer</title>
 
-  <!-- Link(s) to stylesheet(s) -->
+  <!-- Links to stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
 
   <!-- This is the template for error messages -->
@@ -17,8 +18,8 @@
   <p>{{status}}: {{statusText}}</p>
 
   <!-- this is the results template for after photot is uploaded -->
-  <script id="results" type="text/x-handlebars-template">
-    <h1 id="fileName">This is the storage location of your file {{firebaseapp/fileName}}</h2>
+  <script id="results-template" type="text/x-handlebars-template">
+    <h1 id="fileName">Your photo, {{fileName}}, has been uploaded.</h2>
   </script>
   </script>
 </head>
@@ -30,11 +31,22 @@
 
   <!-- photo upload form -->
   <section class="upload tab-content">
+    <p>Are you a photojournalist looking to upload your photo for others to use? Please use the upload form below.</p>
     <form id="uploadPhoto">         
-      <legend>Please upload your photo file in JPG format</legend>
-        <label for="file">
-          <input id="fileName" type="text" placeholder="imagefile.jpg"/>
-        </label>     
+      <legend>Photo Upload Form</legend>  
+      <br>  
+        <label for="location"> Location photo was taken
+            <input id="location" type="text" placeholder="location"/>
+        </label> 
+        <br>  
+        <label for="date"> Date photo was taken
+            <input id="date" type="datetime" placeholder="date"/>
+        </label>  
+        <br>  
+        <label for="file"> Choose file to upload
+            <input id="file" type="file" placeholder="upload photo"/>
+        </label>  
+        <br>  
       <button type="submit" href="/results">Submit</button>
     </form>
   </section>
