@@ -16,6 +16,9 @@ As a photojournalist, I want to be able to upload my large format JPG images to 
  - JavaScript
  - Node.js (8 LTS)
  - Homebrew
+ - Handlebars
+ - Page.js
+ - JQuery
  - Git
  - GitHub
  - Visual Studio Code

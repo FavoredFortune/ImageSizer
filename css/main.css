@@ -2,13 +2,21 @@ body {
   background-color: grey;
   color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  margin: 5vw;
+  margin: 2vw;
 }
 h1 p{
   margin-bottom: 4vw;
 }
 h1{
+  
   font-size: 120%;
+}
+form {
+  margin: 4vw;
+  border: .5vw;
+  border-style: solid;
+  border-color: whitesmoke;
+  padding: 1vw;
 }
 label {
   margin: 2vw 2vw 4vw 0;
@@ -20,4 +28,8 @@ input {
 }
 br {
   line-break: auto;
+}
+#tiny{
+  font-size: 60%;
+  font-style: italic;
 }

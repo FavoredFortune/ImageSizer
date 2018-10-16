@@ -68,13 +68,7 @@ app.get('/', (request, response) => {
 
 
 // //guide code from old project to reference
-// app.get('/nyt/articles/:year/:month', bodyparser, (request, response) => {
-//   const url = `https://api.nytimes.com/svc/archive/v1/${request.params.year}/${request.params.month}.json?`;
-//   superagent(url)
-//     .set(`api-key`, `${NYT_API_KEY}`)
-//     .then(articles => response.send(articles))
-//     .catch(console.error);
-// });
+
 
 
 // app.get('/api/v1/users', (request, response) => {

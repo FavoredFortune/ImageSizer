@@ -16,18 +16,57 @@
   <script id="error-template" type="text/x-handlebars-template">
   <p>Hmm. That page doesn't seem to exist. Please try again.</p>
   <p>{{status}}: {{statusText}}</p>
+  <p>Or that photo at {{filePath}} doesn't appear to be in storage at this time, please check on the filePath and try your request again.</p>
+  </script> 
 
-  <!-- this is the results template for after photot is uploaded -->
-  <script id="results-template" type="text/x-handlebars-template">
+  <!-- this is the results template for photo download -->
+  <script id="results-download-template" type="text/x-handlebars-template">
+    <h1 id="fileName">Your photo, {{fileName}}, has been downloaded.</h2>
+      <img src="DATABASE_URL/{{fileName}}">
+  </script>
+
+  <!-- this is the results template for after photo is uploaded -->
+  <script id="results-upload-template" type="text/x-handlebars-template">
     <h1 id="fileName">Your photo, {{fileName}}, has been uploaded.</h2>
   </script>
-  </script>
+  
 </head>
 <body>
   <h1>Welcome to Image Sizer!</h1>
-
+  <br>
   <!-- showing error message when needed for graceful error -->
   <section class="error-view tab-content"></section>
+
+   <!-- photo request form -->
+   <section class="download tab-content">
+      <p>Are you looking to download a file? Please use the form below.</p>
+      <form id="downloadPhoto">         
+        <legend>Photo Download Form</legend>  
+        <br>  
+          <label for="location"> Location photo was taken
+              <input id="location" type="text" placeholder="location"/>
+          </label> 
+          <br>  
+          <label for="date"> Date photo was taken
+              <input id="date" type="datetime" placeholder="date"/>
+          </label>  
+          <br>  
+          <label for="file"> File Name of the photo to download
+              <input id="fileName" type="text" placeholder="file"/>
+          </label>  
+          <br>  
+          <label for="filePath"> URL of photo to download
+              <input id="filePath" type="text" placeholder="file path"/>
+          </label> 
+          <label for="height"> Height of image to be downloaded*
+              <input id="height" type="number" placeholder="image height in pixels"/>
+          </label>  
+          <br> 
+        <button type="submit" href="/resultsDownloadView">Submit</button>
+        <br>
+        <p id="tiny">*image will be resized based on height only to prevent image distortion</p>
+      </form>
+    </section>
 
   <!-- photo upload form -->
   <section class="upload tab-content">
@@ -47,7 +86,7 @@
             <input id="file" type="file" placeholder="upload photo"/>
         </label>  
         <br>  
-      <button type="submit" href="/results">Submit</button>
+      <button type="submit" href="/resultsUploadView">Submit</button>
     </form>
   </section>
   
@@ -72,6 +111,19 @@
   firebase.initializeApp(config);
 </script>
 
+<!-- Library CDN - jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 <!-- Library CDN - Handlebars -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script> 
+
+<!-- Library CDN Page  -->
+  <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+
+<!-- Modesl views and controller -->
+<script src="models/photos.js"></script>
+<script src="views/errorView.js"></script>
+<script src="views/resultsUploadView.js"></script>
+<script src="views/resultsDownloadView.js"></script>
+<script src="controller/routes.js"></script>
 </html>
