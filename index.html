@@ -11,15 +11,38 @@
   <!-- Link(s) to stylesheet(s) -->
   <link rel="stylesheet" href="css/main.css">
 
-   <!-- This is the template for error messages -->
-   <script id="error-template" type="text/x-handlebars-template">
-    <p>Hmm. That page doesn't seem to exist. Please try again.</p>
-    <p>{{status}}: {{statusText}}</p>
+  <!-- This is the template for error messages -->
+  <script id="error-template" type="text/x-handlebars-template">
+  <p>Hmm. That page doesn't seem to exist. Please try again.</p>
+  <p>{{status}}: {{statusText}}</p>
+
+  <!-- this is the results template for after photot is uploaded -->
+  <script id="results" type="text/x-handlebars-template">
+    <h1 id="fileName">This is the storage location of your file {{firebaseapp/fileName}}</h2>
+  </script>
   </script>
 </head>
 <body>
   <h1>Welcome to Image Sizer!</h1>
+
+  <!-- showing error message when needed for graceful error -->
   <section class="error-view tab-content"></section>
+
+  <!-- photo upload form -->
+  <section class="upload tab-content">
+    <form id="uploadPhoto">         
+      <legend>Please upload your photo file in JPG format</legend>
+        <label for="file">
+          <input id="fileName" type="text" placeholder="imagefile.jpg"/>
+        </label>     
+      <button type="submit" href="/results">Submit</button>
+    </form>
+  </section>
+  
+  <!-- results showing photo upload location in storage/db -->
+  <section class="results tab-content"></section>
+
+  
 </body>
 
 <!-- provide access to firebase database for front-end user interacton -->
