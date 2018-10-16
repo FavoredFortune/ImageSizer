@@ -27,8 +27,9 @@ As a photojournalist, I want to be able to upload my large format JPG images to 
     - Body-parser
     - Superagent
     - Nodemon
+    - Firebase
 
 # Resources
 - Referenced my own project, [On This Day](On-This-Day/thisday-server)
 - Proof of life refresher [Rising Stack](https://blog.risingstack.com/your-first-node-js-http-server/)
-- 
+- Implementing Firebase [NPM.org](https://www.npmjs.com/package/firebase)

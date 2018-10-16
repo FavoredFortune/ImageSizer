@@ -12,4 +12,18 @@
 <body>
   <h1>Welcome to Image Sizer!</h1>
 </body>
+<!-- provide access to firebase database for front-end user interacton -->
+<script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBb8tDj-oO_fBoGX1KP0MTDO4GRcv5KJm4",
+    authDomain: "photoapp-c643e.firebaseapp.com",
+    databaseURL: "https://photoapp-c643e.firebaseio.com",
+    projectId: "photoapp-c643e",
+    storageBucket: "photoapp-c643e.appspot.com",
+    messagingSenderId: "170890289058"
+  };
+  firebase.initializeApp(config);
+</script>
 </html>

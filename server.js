@@ -4,6 +4,8 @@
 const https = require('https');
 const express = require('express');
 const cors = require('cors');
+const firebase = require('firebase/app');
+require('firebase/database');
 // const pg = require('pg');
 const bodyparser = require('body-parser').urlencoded({extended: true});
 const superagent = require('superagent');
@@ -27,24 +29,36 @@ app.use(cors());
 // client.on('error', err => console.error(err));
 
 //PROOF OF LIFE
-const requestHandler = (request, response) => {
-  console.log(request.url);
-  response.end('Hello Image Sizer Server!');
-};
+// const requestHandler = (request, response) => {
+//   console.log(request.url);
+//   response.end('Hello Image Sizer Server!');
+// };
 
-const server = https.createServer(requestHandler);
+// const server = https.createServer(requestHandler);
 
-server.listen(PORT,(error)=> {
-  if(error){
-    return console.log('an error occured', error);
-  }
+// server.listen(PORT,(error)=> {
+//   if(error){
+//     return console.log('an error occured', error);
+//   }
 
-  console.log(`Image Sizer server is listening on port ${PORT}`);
-});
+//   console.log(`Image Sizer server is listening on port ${PORT}`);
+// });
 
 //using middleware(Express)
+app.use((request,response,next) =>{
+  console.log(request.headers);
+  next();
+});
+
+app.use((request,response, next) =>{
+  request.chance = Math.random();
+  next();
+});
+
 app.get('/', (request, response) => {
   response.send('Hello from Image Sizer using Express!');
+  response.json({chance: request.chance
+  });
 });
 
 
@@ -95,5 +109,12 @@ app.get('/', (request, response) => {
 //     .catch(console.error);
 // });
 
-// app.get('*', (request, response) => response.redirect(CLIENT_URL));
-// app.listen(PORT, () => console.log(`Listening on Port: ${PORT}`));
+app.get('*', (request, response) => response.redirect(CLIENT_URL));
+app.listen(PORT, () => console.log(`Listening on Port: ${PORT}`));
+
+app.use((error, request, response)=>{
+  console.log(error);
+  response.status(500).send('Eek! Something is wrong!');
+});
+
+app.listen(PORT);
