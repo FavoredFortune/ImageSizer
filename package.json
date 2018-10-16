@@ -1,0 +1,32 @@
+{
+  "name": "imagesizer",
+  "version": "1.0.0",
+  "description": "imagesizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FavoredFortune/ImageSizer.git"
+  },
+  "author": "Sooz Richman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FavoredFortune/ImageSizer/issues"
+  },
+  "homepage": "https://github.com/FavoredFortune/ImageSizer#readme",
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "nodemon": "^1.18.4",
+    "parser": "^0.1.4",
+    "superagent": "^4.0.0-beta.5"
+  },
+  "devDependencies": {}
+}
