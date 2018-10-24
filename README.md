@@ -37,6 +37,7 @@ As a photojournalist, I want to be able to upload my large format JPG images to 
     - Nodemon
     - Firebase
     - Live-server
+    - GraphicsMagick
 
 # Resources
 - Referenced my own project, [On This Day](On-This-Day/thisday-server)
@@ -44,3 +45,4 @@ As a photojournalist, I want to be able to upload my large format JPG images to 
 - Implementing Firebase [NPM.org](https://www.npmjs.com/package/firebase)
 - Referenced my own project for photo file uploads [Uploading files](https://github.com/FavoredFortune/13-uploading-files)
 - Referened my own project on get/post mapping in spring MVC - just to double check structure based on "On This Day" [Photo Upload](https://github.com/FavoredFortune/31-photo-upload)
+- Guidance on using GraphicsMagick to manage cropping & resizing needs of application [Camp Vanilla](https://blog.campvanilla.com/nodejs-graphicsmagick-cropping-resizing-server-api-b410fe98e41)
